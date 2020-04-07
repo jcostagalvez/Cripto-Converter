@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Criptomonedas </title>
+     
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Cotiza Criptomonedas al Instante</h1>
+    <div class="contenido-principal">
+
+        <div class="container"> 
+            <form id="formulario">
+                <div class="formulario">
+                        <div>
+                            <select id="Moneda" class="field-monedas">
+                                <option value="" disabled selected>Elige Moneda</option>
+                            </select>
+                        </div>    
+                        <div>
+                            <select id="criptomoneda"  class="field-criptomonedas">
+                                <option value="" disabled selected>Elige Criptomoneda</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="submit"  class="btn-cotizar" value="Cotizar">
+                        </div>
+                </div><!--.formulario-cotizar-->
+
+                <div class="panel-resultados row justify-content-center mt-5">
+                    <div class="contenido-spinner">
+                  
+                    </div>
+                    <div></div>
+                    <div id="resultado"></div>
+                </div><!--panel-resultados-->
+            </form>
+        </div> 
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

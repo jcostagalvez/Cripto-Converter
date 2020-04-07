@@ -18,7 +18,7 @@ monedas.forEach ((value, key) =>{
 })
 
 
-//Evento al clickar el botón.
+//Evento al clickar el botón. 
 formulario.addEventListener('submit', e => {
     e.preventDefault();
     const monedaSeleccionada = monedasField.options[monedasField.selectedIndex].value;

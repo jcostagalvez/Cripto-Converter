@@ -1,3 +1,6 @@
+//Clases Importadas
+const ui = new Interfaz();
+
 // constantes varadas
 const monedas = new Map();
 monedas.set('USD','Dolares');
@@ -27,6 +30,7 @@ formulario.addEventListener('submit', e => {
     if(validateValue(monedaSeleccionada) == false || validateValue(criptoSeleccionada) == false){
         // Mensaje de error
         console.log('Error');
+        ui.mostrarMensajeError('Por favor rellene ambos campos', 'alert', 'Error'); 
     } else{
         //llamada a la API
         console.log('SUCCESS');

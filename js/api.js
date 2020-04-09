@@ -1,0 +1,13 @@
+
+class Api {
+    constructor(apikey){
+        this.apikey = apikey;
+    }
+
+    async getData() {
+        const url = `https://min-api.cryptocompare.com/data/all/coinlist?api_key=${this.apikey}`;
+        const call = await fetch(url);
+        const result = await call.json();
+        return result.Data;
+    };
+}

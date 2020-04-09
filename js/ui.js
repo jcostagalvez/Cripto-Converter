@@ -1,13 +1,26 @@
-class Interfaz{
+// instancia de las clases
+const common = new Utils();
+const apicall = new Api();
 
-    mostrarMensajeError(mensaje, clase, Id) {
+
+
+class Interfaz{
+    constructor() {
+        this.init();
+    }
+    
+    init(){
+        this.buildCriptoOptions();
+    };
+
+    showError(text, cssClass, Id) {
         const createDiv = document.createElement('div');
         const createSpan = document.createElement('span');
         createSpan.className = 'MensajeCaja';
-        createDiv.className = clase;
+        createDiv.className = cssClass;
         createDiv.id = 'ContenedorMensaje';
 
-        createSpan.appendChild(document.createTextNode(mensaje));
+        createSpan.appendChild(document.createTextNode(text));
         const divMensaje = document.getElementById(Id);
         divMensaje.appendChild(createDiv);
         const spanMensaje = document.getElementById('ContenedorMensaje');
@@ -16,5 +29,37 @@ class Interfaz{
         setTimeout( () =>{
             document.getElementById('ContenedorMensaje').remove();
         }, 3000)
+
+        return null;
+    };
+
+    buildOptionList(map, parentElement){
+
+        map.forEach ((value, key) =>{
+
+                const option = document.createElement('option');
+                option.value = key;
+                option.label = value;
+                parentElement.appendChild(option);
+
+         })
+
+         return null;
+    };
+
+    buildCriptoOptions(){
+
+        const dataList = document.getElementById('dataList');
+
+        apicall.getData()
+            .then(cripto => {
+                const mp = new Map();
+                for (let prop in cripto) {
+                    mp.set(cripto[prop].Symbol, cripto[prop].CoinName);
+                }      
+                    this.buildOptionList(mp, dataList);
+            });
+
+        return null
     }
 }

@@ -17,18 +17,13 @@
             <form id="formulario">
                 <div class="formulario">
                         <div>
-<<<<<<< HEAD
-                            <select id="Moneda" class="field-monedas">
-=======
                             <select id="moneda" class="field-monedas">
->>>>>>> 275d934371f1592a2807c79f6e8086c707eb4538
                                 <option value="" disabled selected>Elige Moneda</option>
                             </select>
                         </div>    
                         <div>
-                            <select id="criptomoneda"  class="field-criptomonedas">
-                                <option value="" disabled selected>Elige Criptomoneda</option>
-                            </select>
+                            <input value="" id="criptomoneda"  class="field-criptomonedas" type="text" placeholder="Introduce criptomoneda" list="dataList"></input>
+                            <datalist id="dataList"> </datalist>
                         </div>
                         <div>
                             <input type="submit"  class="btn-cotizar" value="Cotizar">
@@ -39,18 +34,16 @@
                     <div class="contenido-spinner">
                   
                     </div>
-<<<<<<< HEAD
-                    <div></div>
-=======
                     <div id ='Error'></div>
->>>>>>> 275d934371f1592a2807c79f6e8086c707eb4538
                     <div id="resultado"></div>
                 </div><!--panel-resultados-->
             </form>
         </div> 
     </div>
+    <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
     <script src="js/ui.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js"></script>     
+
 </body>
 </html>

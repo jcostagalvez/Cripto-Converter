@@ -74,5 +74,29 @@ form {
     border-style: none;
 }
 
+<<<<<<< HEAD
 
+=======
+#Error{
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 25%;
+    
+}
+
+.alert{
+    color: white; 
+    width: 36%;
+    height: 50px;
+    background-color: red;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.MensajeCaja{
+    display: flow-root;
+    text-align: center;
+    margin-top: 2.5%;
+}
+>>>>>>> 275d934371f1592a2807c79f6e8086c707eb4538
 

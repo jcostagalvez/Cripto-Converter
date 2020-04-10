@@ -14,6 +14,7 @@ class Interfaz{
     };
 
     showError(text, cssClass, Id) {
+        const spinner = document.getElementById('spinner');
         const createDiv = document.createElement('div');
         const createSpan = document.createElement('span');
         createSpan.className = 'MensajeCaja';
@@ -34,7 +35,8 @@ class Interfaz{
     };
 
     showResults(resultado, cripto, moneda) {
-        
+        const previewResult = document.querySelector('#resultado > div');
+        if(previewResult){ this.visibilityOfContent(previewResult, 'none') };
         const datos = resultado[cripto][moneda];
         let fecha = new Date(datos.LASTUPDATE * 1000).toLocaleDateString('en-US');
         let templateHtml = `
@@ -46,7 +48,12 @@ class Interfaz{
         </div>
         `;
 
-        document.getElementById('resultado').innerHTML = templateHtml;
+        this.visibilityOfContent(spinner, 'block');
+
+        setTimeout(() => {
+            this.visibilityOfContent(spinner, 'none');
+            document.getElementById('resultado').innerHTML = templateHtml;
+        },2000);
 
     };
 
@@ -79,4 +86,6 @@ class Interfaz{
 
         return null
     }
+
+    visibilityOfContent(content, style) { content.style.display = style ;}
 }

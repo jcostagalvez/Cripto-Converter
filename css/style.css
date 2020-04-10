@@ -104,7 +104,7 @@ form {
     margin-left: 25%;
     color: white; 
     width: 54%;
-    background-color: #744b11;
+    background-color: #1f474b;
     border-radius: 5px; 
 }
 
@@ -117,4 +117,23 @@ form {
 
 .resultText {
     margin-bottom: 2.5%;
+}
+
+.spinner{
+    display: none;
+    position: absolute;
+    top: 52%;
+    left: 42%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    border-top-color: lightseagreen;
+    animation: spinnerround 0.5s linear infinite;
+}
+
+@keyframes spinnerround{
+    to{
+        transform: rotate(360deg);
+    }
 }

@@ -33,6 +33,23 @@ class Interfaz{
         return null;
     };
 
+    showResults(resultado, cripto, moneda) {
+        
+        const datos = resultado[cripto][moneda];
+        let fecha = new Date(datos.LASTUPDATE * 1000).toLocaleDateString('en-US');
+        let templateHtml = `
+        <div class='result'>
+            <span class='resultText'>RESULTADO </span>
+            <span class='resultText'>El valor de ${cripto} para ${moneda} es de ${datos.PRICE}.</span>
+            <span class='resultText'>Su variación el ultimo dia es de: %${datos.CHANGEPCTDAY}.</span>
+            <span class='resultText'>La ultima actualización fue: ${fecha}.</span>       
+        </div>
+        `;
+
+        document.getElementById('resultado').innerHTML = templateHtml;
+
+    };
+
     buildOptionList(map, parentElement){
 
         map.forEach ((value, key) =>{

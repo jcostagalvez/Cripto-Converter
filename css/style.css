@@ -96,3 +96,25 @@ form {
     margin-top: 2.5%;
 }
 
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    color: white; 
+    width: 54%;
+    background-color: #744b11;
+    border-radius: 5px; 
+}
+
+.result  :first-child{
+    margin-top: 15px;
+}
+.result  :last-child{
+    margin-bottom: 12.5px;
+}
+
+.resultText {
+    margin-bottom: 2.5%;
+}

@@ -1,7 +1,7 @@
 //Clases Importadas
 const ui = new Interfaz();
 const util = new Utils();
-
+const server = new Api();
 // constantes varadas
 const apiKey = '1dca0c6c048cdfaa1b1eb20f62f078bd0f58167da31df5bb68e1699920355e02';
 const coins = new Map();
@@ -22,13 +22,18 @@ form.addEventListener('submit', e => {
     
     if(util.blankValueValidation(coinSelected) == true || util.blankValueValidation(criptoSelected) == true){
         // Mensaje de error
-        console.log('Error');
+        console.log('ERROR');
         ui.showError('Por favor rellene ambos campos', 'alert', 'Error'); 
     } else{        
         //llamada a la API
         console.log('SUCCESS');
+        server.getExchange(coinSelected, criptoSelected)
+        . then(datos => {
+            ui.showResults(datos, criptoSelected, coinSelected);
+        }, error => {
+            console.log(error);
+        });
     }
 });
 
 // Utils
-
